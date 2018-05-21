@@ -9,8 +9,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
@@ -62,7 +65,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+            UpdateCursorLock();
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
             UpdateCursorLock();
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
@@ -83,8 +90,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
         public void UpdateCursorLock()
@@ -117,6 +127,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742

@@ -63,8 +63,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(Time.timeScale != 0f)
             {
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
@@ -91,7 +94,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
@@ -147,6 +153,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            m_MouseLook.UpdateCursorLock();
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 =======
             m_MouseLook.UpdateCursorLock();
 >>>>>>> af585924506da9789651b4fc3419ed3aaed60742
