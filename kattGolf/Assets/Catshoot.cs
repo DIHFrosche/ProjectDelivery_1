@@ -19,34 +19,33 @@ public class Catshoot : MonoBehaviour {
     Vector3 directionBetweenCatAndTarget;
     float currentHeight;
     float targetMoveSpeed = 0.9f;
-    void Start () {
-        cat = FindObjectOfType<Rigidbody>();
-	}
-	
-	void Update () {
-        Vector3 targetPos = Vector3.Scale(target.transform.position, new Vector3(1, 0, 1));
-        Vector3 catPos = Vector3.Scale(cat.transform.position, new Vector3(1, 0, 1));
-        directionBetweenCatAndTarget = (targetPos - catPos).normalized;
-        Debug.DrawRay(cat.transform.position, directionBetweenCatAndTarget * 1000, Color.red);
-        if (Input.GetKey(KeyCode.RightArrow)){
-            currentHeight += 1;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            currentHeight -= 1;
-        }
-        currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
 
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            target.position += directionBetweenCatAndTarget * targetMoveSpeed;
-        }
-        if (Input.GetKey(KeyCode.DownArrow)) {
-            target.position -= directionBetweenCatAndTarget * targetMoveSpeed;
-        }
-        if (Input.GetKey(KeyCode.Q)) {
-            Launch();
-        }
-        if (debugPath == true) {
-            DrawPath();
+	void Update () {
+        if(cat != null) {
+            Vector3 targetPos = Vector3.Scale(target.transform.position, new Vector3(1, 0, 1));
+            Vector3 catPos = Vector3.Scale(cat.transform.position, new Vector3(1, 0, 1));
+            directionBetweenCatAndTarget = (targetPos - catPos).normalized;
+            Debug.DrawRay(cat.transform.position, directionBetweenCatAndTarget * 1000, Color.red);
+            if (Input.GetKey(KeyCode.RightArrow)){
+                currentHeight += 1;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                currentHeight -= 1;
+            }
+            currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
+
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                target.position += directionBetweenCatAndTarget * targetMoveSpeed;
+            }
+            if (Input.GetKey(KeyCode.DownArrow)) {
+                target.position -= directionBetweenCatAndTarget * targetMoveSpeed;
+            }
+            if (Input.GetKey(KeyCode.Q)) {
+                Launch();
+            }
+            if (debugPath == true) {
+                DrawPath();
+            }
         }
     }
     private void OnDrawGizmos() {

@@ -18,13 +18,9 @@ public class gamemeny : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyUp(KeyCode.Escape))
         {
-            if(Gameispaused == true)
-            {
-                Resume();
-            }
-            else
+            if(Gameispaused == false)
             {
                 Pause();
             }
@@ -34,13 +30,20 @@ public class gamemeny : MonoBehaviour {
     {
         pausemenuUI.SetActive(false);
         Time.timeScale = 1f;
-        Gameispaused = false;   
+        Gameispaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+
     }
     public void Pause()
     {
         pausemenuUI.SetActive(true);
         Time.timeScale = 0f;
         Gameispaused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
     }
     public void Continue()
     {
@@ -48,7 +51,7 @@ public class gamemeny : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
-    public void mainmeny()
+    public void mainmenu()
     {
         SceneManager.LoadScene(1);
     }
