@@ -61,6 +61,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            if(Time.timeScale != 0f)
+            {
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -81,6 +92,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            }
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
         }
 
 
@@ -130,7 +151,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
             m_MouseLook.UpdateCursorLock();
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
+            m_MouseLook.UpdateCursorLock();
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
+=======
+            m_MouseLook.UpdateCursorLock();
+>>>>>>> af585924506da9789651b4fc3419ed3aaed60742
         }
 
 
