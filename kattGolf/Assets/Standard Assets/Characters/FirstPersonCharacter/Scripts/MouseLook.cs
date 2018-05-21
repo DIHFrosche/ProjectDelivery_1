@@ -85,16 +85,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_cursorIsLocked = true;
             }
 
-            //if (m_cursorIsLocked)
-            //{
-            //    Cursor.lockState = CursorLockMode.Locked;
-            //    Cursor.visible = false;
-            //}
-            //else if (!m_cursorIsLocked)
-            //{
-            //    Cursor.lockState = CursorLockMode.None;
-            //    Cursor.visible = true;
-            //}
+            if (m_cursorIsLocked) {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else if (!m_cursorIsLocked) {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)

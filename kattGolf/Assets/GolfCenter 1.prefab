@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1527319729404904}
+  m_RootGameObject: {fileID: 1077515488786632}
   m_IsPrefabParent: 1
---- !u!1 &1229640861385166
+--- !u!1 &1077515488786632
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4278090982040134}
+  - component: {fileID: 4813520150903176}
   m_Layer: 0
-  m_Name: Target
+  m_Name: GolfCenter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1267552400673926
+--- !u!1 &1328532677444058
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4835751561236588}
+  - component: {fileID: 4600230934992744}
   m_Layer: 0
   m_Name: GolfPivot
   m_TagString: Untagged
@@ -41,17 +41,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1497149856132038
+--- !u!1 &1399307254821920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4795040836683626}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1573250260385292
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4329252177144256}
-  - component: {fileID: 33186694234926128}
-  - component: {fileID: 23006794029721182}
-  - component: {fileID: 64878307226766108}
+  - component: {fileID: 4667596919712130}
+  - component: {fileID: 33438163655912076}
+  - component: {fileID: 23344629634845718}
   m_Layer: 0
   m_Name: GolfClub
   m_TagString: Untagged
@@ -59,82 +73,67 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1527319729404904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4935494714635328}
-  m_Layer: 0
-  m_Name: GolfCenter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4278090982040134
+--- !u!4 &4600230934992744
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1229640861385166}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.251, y: -2.89, z: -0.5500001}
+  m_GameObject: {fileID: 1328532677444058}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08715578, w: 0.9961947}
+  m_LocalPosition: {x: -0.6389997, y: 0.4599998, z: 1.3799999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4935494714635328}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4329252177144256
+  m_Children:
+  - {fileID: 4667596919712130}
+  m_Father: {fileID: 4813520150903176}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
+--- !u!4 &4667596919712130
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497149856132038}
+  m_GameObject: {fileID: 1573250260385292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2.28, z: -0.91999984}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4835751561236588}
+  m_Father: {fileID: 4600230934992744}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4835751561236588
+--- !u!4 &4795040836683626
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267552400673926}
+  m_GameObject: {fileID: 1399307254821920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6389997, y: 0.4599998, z: 1.3799999}
+  m_LocalPosition: {x: 25.251, y: -2.89, z: -0.5500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4329252177144256}
-  m_Father: {fileID: 4935494714635328}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 4813520150903176}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4935494714635328
+--- !u!4 &4813520150903176
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1527319729404904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98, y: 2.91, z: 0.55}
+  m_GameObject: {fileID: 1077515488786632}
+  m_LocalRotation: {x: 0, y: -0.4707069, z: 0, w: 0.88228965}
+  m_LocalPosition: {x: 1.1212058, y: 3.0078654, z: 0.48945072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4835751561236588}
-  - {fileID: 4278090982040134}
+  - {fileID: 4600230934992744}
+  - {fileID: 4795040836683626}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23006794029721182
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!23 &23344629634845718
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497149856132038}
+  m_GameObject: {fileID: 1573250260385292}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -165,24 +164,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33186694234926128
+--- !u!33 &33438163655912076
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497149856132038}
-  m_Mesh: {fileID: 4300000, guid: 03157dff0cbd1e54da99094d31501b2c, type: 3}
---- !u!64 &64878307226766108
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1497149856132038}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
+  m_GameObject: {fileID: 1573250260385292}
   m_Mesh: {fileID: 4300000, guid: 03157dff0cbd1e54da99094d31501b2c, type: 3}

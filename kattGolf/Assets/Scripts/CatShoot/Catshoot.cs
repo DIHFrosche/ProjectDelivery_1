@@ -20,10 +20,22 @@ public class Catshoot : MonoBehaviour {
     float currentHeight;
     float targetMoveSpeed = 0.9f;
 
-    [SerializeField]GameObject catBatPivot;
+    [SerializeField] GameObject catBatPivot;
     float currentPivotRotation;
 
+    [SerializeField]GameObject linePrefab;
+
+    GameObject[] lines = new GameObject[30];
+
+    private void Start() {
+        for (int i = 0; i < lines.Length; i++) {
+            lines[i] = Instantiate(linePrefab);
+        }
+    }
+
     void Update () {
+
+
         print(FindObjectOfType<SelectCat>().cat);
         if(FindObjectOfType<SelectCat>().cat != null) {
             cat = FindObjectOfType<SelectCat>().cat.GetComponent<Rigidbody>();
@@ -40,17 +52,22 @@ public class Catshoot : MonoBehaviour {
             currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
 
             if (Input.GetKey(KeyCode.UpArrow)) {
-                currentPivotRotation++;
+                currentPivotRotation--;
+                currentPivotRotation = Mathf.Clamp(currentPivotRotation, -90, 0);
+                catBatPivot.transform.eulerAngles = new Vector3(0, 0, currentPivotRotation);
                 target.position += directionBetweenCatAndTarget * targetMoveSpeed;
             }
             if (Input.GetKey(KeyCode.DownArrow)) {
-                currentPivotRotation--;
+                currentPivotRotation++;
                 currentPivotRotation = Mathf.Clamp(currentPivotRotation, -90, 0);
+                catBatPivot.transform.eulerAngles = new Vector3(0, 0, currentPivotRotation);
                 target.position -= directionBetweenCatAndTarget * targetMoveSpeed;
             }
-            if (Input.GetKey(KeyCode.Q)) {
+            if (Input.GetKey(KeyCode.Mouse0)) {
                 Launch();
+                StartCoroutine(slamBat());
                 GetComponent<SelectCat>().cat = null;
+                GetComponent<CatBat>().club.SetActive(false);
             }
             if (debugPath == true) {
                 DrawPath();
@@ -84,11 +101,13 @@ public class Catshoot : MonoBehaviour {
         Vector3 previousDrawPoint = cat.position;
 
         int resolution = 30;
-        for (int i = 1; i <= resolution; i++) {
+        for (int i = 0; i <= resolution; i++) {
             float simulationTime = i / (float)resolution * launchData.timeToTarget;
             Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * gravity * simulationTime * simulationTime / 2f;
             Vector3 drawPoint = cat.position + displacement;
-            Debug.DrawLine(previousDrawPoint, drawPoint, Color.green);
+            lines[i].GetComponent<LineRenderer>().SetPosition(0, previousDrawPoint);
+            lines[i].GetComponent<LineRenderer>().SetPosition(1, drawPoint);
+            //Debug.DrawLine(previousDrawPoint, drawPoint, Color.green);
             previousDrawPoint = drawPoint;
         }
     }
@@ -100,6 +119,17 @@ public class Catshoot : MonoBehaviour {
         public LaunchData(Vector3 initialVelocity, float timeToTarget) {
             this.initialVelocity = initialVelocity;
             this.timeToTarget = timeToTarget;
+        }
+
+    }
+
+    IEnumerator slamBat() {
+        int divider = 1;
+        float amountOfShift =  currentPivotRotation/divider;
+        for (int i = 0; i < 1; i++) {
+            currentPivotRotation -= amountOfShift-10;
+            catBatPivot.transform.eulerAngles = new Vector3(0, 0, currentPivotRotation);
+            yield return null;
         }
 
     }
