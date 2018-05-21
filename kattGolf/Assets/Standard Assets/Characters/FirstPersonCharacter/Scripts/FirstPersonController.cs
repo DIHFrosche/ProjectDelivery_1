@@ -63,7 +63,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if(Time.timeScale != 0f)
             {
-
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -85,7 +84,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
             }
+
         }
+
 
 
         private void PlayLandingSound()
@@ -133,11 +134,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
+            m_MouseLook.UpdateCursorLock();
 
-
-            m_MouseLook.UpdateCursorLock();
-            m_MouseLook.UpdateCursorLock();
-            m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -264,3 +262,4 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
     }
 }
+
