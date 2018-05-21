@@ -9,7 +9,7 @@ public class Catshoot : MonoBehaviour {
     public float maxHeight = 10;
     public float minHeight = 1;
 
-    Rigidbody cat;
+    public Rigidbody cat;
     [Header("Mer Gravity för hårdare slag")]
     public float gravity = -18;
 
@@ -20,8 +20,13 @@ public class Catshoot : MonoBehaviour {
     float currentHeight;
     float targetMoveSpeed = 0.9f;
 
-	void Update () {
-        if(cat != null) {
+    [SerializeField]GameObject catBatPivot;
+    float currentPivotRotation;
+
+    void Update () {
+        print(FindObjectOfType<SelectCat>().cat);
+        if(FindObjectOfType<SelectCat>().cat != null) {
+            cat = FindObjectOfType<SelectCat>().cat.GetComponent<Rigidbody>();
             Vector3 targetPos = Vector3.Scale(target.transform.position, new Vector3(1, 0, 1));
             Vector3 catPos = Vector3.Scale(cat.transform.position, new Vector3(1, 0, 1));
             directionBetweenCatAndTarget = (targetPos - catPos).normalized;
@@ -35,13 +40,17 @@ public class Catshoot : MonoBehaviour {
             currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
 
             if (Input.GetKey(KeyCode.UpArrow)) {
+                currentPivotRotation++;
                 target.position += directionBetweenCatAndTarget * targetMoveSpeed;
             }
             if (Input.GetKey(KeyCode.DownArrow)) {
+                currentPivotRotation--;
+                currentPivotRotation = Mathf.Clamp(currentPivotRotation, -90, 0);
                 target.position -= directionBetweenCatAndTarget * targetMoveSpeed;
             }
             if (Input.GetKey(KeyCode.Q)) {
                 Launch();
+                GetComponent<SelectCat>().cat = null;
             }
             if (debugPath == true) {
                 DrawPath();

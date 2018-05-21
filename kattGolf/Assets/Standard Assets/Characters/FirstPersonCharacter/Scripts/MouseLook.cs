@@ -7,17 +7,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [Serializable]
     public class MouseLook
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
         public float XSensitivity = 2f;
         public float YSensitivity = 2f;
         public bool clampVerticalRotation = true;
@@ -63,19 +52,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 camera.localRotation = m_CameraTargetRot;
             }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
             UpdateCursorLock();
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
-            UpdateCursorLock();
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
-            UpdateCursorLock();
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
         }
 
         public void SetCursorLock(bool value)
@@ -87,16 +64,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Cursor.visible = true;
             }
         }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
         public void UpdateCursorLock()
         {
             //if the user set "lockCursor" we check & properly lock the cursos
@@ -126,13 +93,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 Cursor.visible = true;
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
-=======
->>>>>>> af585924506da9789651b4fc3419ed3aaed60742
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)
         {
