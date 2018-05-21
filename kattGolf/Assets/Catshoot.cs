@@ -28,7 +28,13 @@ public class Catshoot : MonoBehaviour {
         Vector3 catPos = Vector3.Scale(cat.transform.position, new Vector3(1, 0, 1));
         directionBetweenCatAndTarget = (targetPos - catPos).normalized;
         Debug.DrawRay(cat.transform.position, directionBetweenCatAndTarget * 1000, Color.red);
-
+        if (Input.GetKey(KeyCode.RightArrow)){
+            currentHeight += 1;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            currentHeight -= 1;
+        }
+        currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
 
         if (Input.GetKey(KeyCode.UpArrow)) {
             target.position += directionBetweenCatAndTarget * targetMoveSpeed;
@@ -56,18 +62,16 @@ public class Catshoot : MonoBehaviour {
     LaunchData CalculateLaunchData() {
         float displacementY = target.position.y - cat.position.y;
         Vector3 displacementXZ = new Vector3(target.position.x - cat.position.x, 0, target.position.z - cat.position.z);
-        float time = Mathf.Sqrt(-2 * maxHeight / gravity) + Mathf.Sqrt(2 * (displacementY - maxHeight) / maxHeight);
-        print(time);
-        print("dpslacementY " + displacementY);
-        print(Mathf.Sqrt(2 * (displacementY - maxHeight)) + " dispY");
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * maxHeight);
+
+        float time = Mathf.Sqrt(-2 * currentHeight / gravity) + Mathf.Sqrt(2 * (displacementY - currentHeight) / gravity);
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * currentHeight);
+
         Vector3 velocityXZ = displacementXZ / time;
 
         return new LaunchData(velocityXZ + velocityY * -Mathf.Sign(gravity), time);
     }
 
     void DrawPath() {
-        print("adasdas");
         LaunchData launchData = CalculateLaunchData();
         Vector3 previousDrawPoint = cat.position;
 
