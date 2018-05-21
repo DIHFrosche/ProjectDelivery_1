@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
-    public GameObject Shop;
+    public GameObject ShopCanvas;
     public GameObject Player;
     public GameObject gamemnu;
     // Use this for initialization
@@ -23,7 +23,7 @@ public class ShopScript : MonoBehaviour
         print("shop");
         if (Collision.tag == "meny")
         {
-            Shop.SetActive(true);
+            ShopCanvas.SetActive(true);
             gamemnu.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -34,7 +34,7 @@ public class ShopScript : MonoBehaviour
         print("leave");
         if (other.tag == "meny")
         {
-            Shop.SetActive(false);
+            ShopCanvas.SetActive(false);
             gamemnu.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
