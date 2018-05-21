@@ -6,6 +6,7 @@ public class ShopScript : MonoBehaviour
 {
     public GameObject Shop;
     public GameObject Player;
+    public GameObject gamemnu;
     // Use this for initialization
     void Start()
     {
@@ -19,9 +20,24 @@ public class ShopScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider Collision)
     {
-        if (GetComponent<Collider>().tag == "meny")
+        print("shop");
+        if (Collision.tag == "meny")
         {
             Shop.SetActive(true);
+            gamemnu.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        print("leave");
+        if (other.tag == "meny")
+        {
+            Shop.SetActive(false);
+            gamemnu.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
