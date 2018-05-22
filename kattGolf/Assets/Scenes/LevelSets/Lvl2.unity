@@ -4379,9 +4379,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   club: {fileID: 2056738603}
-  Bazooka: {fileID: 0}
-  Catclub: {fileID: 0}
-  WALLE: {fileID: 0}
+  Bazooka: {fileID: 4300000, guid: 2f31dfb1660915d4a9f0fb96ebcaf800, type: 3}
+  Catclub: {fileID: 4300000, guid: 1323910796c4c3744bc14dc2e57e0336, type: 3}
+  WALLE: {fileID: 4300000, guid: 751b4e73081e0454c9df206b0e880057, type: 3}
 --- !u!114 &1326293626
 MonoBehaviour:
   m_ObjectHideFlags: 0
