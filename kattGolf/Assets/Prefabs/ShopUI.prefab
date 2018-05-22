@@ -115,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1482360535214302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,10 +1055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ad81ba513c9d84cb329255f72fc3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  payment1: 100
-  payment2: 600
-  payment3: 800
-  payment4: 10000
+  payment1: 0
+  payment2: 0
+  payment3: 0
+  payment4: 0
   SoldOut1: {fileID: 1609161899317018}
   SoldOut2: {fileID: 1354159895935234}
   SoldOut3: {fileID: 1482360535214302}
