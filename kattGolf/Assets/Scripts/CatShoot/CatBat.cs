@@ -18,7 +18,7 @@ public class CatBat : MonoBehaviour {
         if (GetComponent<SelectCat>().hasCatBeenSelected == true) {
             club.SetActive(true);
             cat = GetComponent<SelectCat>().cat;
-            if(club != null) {
+            if(cat != null) {
                 club.transform.position = cat.transform.position + new Vector3(0, 2.55f, 0);
                 club.transform.LookAt(currentPointHit);
                 club.transform.eulerAngles = Vector3.Scale(club.transform.eulerAngles, new Vector3(0, 1, 0));
