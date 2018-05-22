@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class CatDeliveredTrigger : MonoBehaviour {
 
+    public GameObject goodJob;
+
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Cat") {
+        print(transform.name);
+        if(other.gameObject.tag == "Window") {
             FindObjectOfType<GameMaser>().deliveredCats++;
         }
     }
