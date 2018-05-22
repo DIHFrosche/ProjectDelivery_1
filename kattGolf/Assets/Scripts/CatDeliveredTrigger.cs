@@ -10,8 +10,10 @@ public class CatDeliveredTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         print(transform.name);
         if(other.gameObject.tag == "Window") {
+            
             FindObjectOfType<GameMaser>().UpdateCAts();
             Instantiate(goodJob, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
