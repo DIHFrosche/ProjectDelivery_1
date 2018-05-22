@@ -12,10 +12,14 @@ public class NavMeshTest : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
     float timeLeft;
     Collider thisColider;
+    AudioSource catSound;
+    float timeRemaining = 1;
+    float timeRemainingReset = 0.5f;
 
 
     void Start()
     {
+        catSound = GetComponent<AudioSource>();
         thisColider = GetComponent<Collider>();
         Time.timeScale = 2;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -58,14 +62,21 @@ public class NavMeshTest : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "wall")
+        print(other.gameObject.tag);
+        if (other.gameObject.tag == "Cat")
         {
-           
-                Physics.IgnoreCollision(collision.collider, thisColider);
-            
+            catSound.Play();
+            timeRemaining -= Time.deltaTime; // subtract time each frame
+            if (timeRemaining <= 0)
+            {
+                // reset the timer
+                timeRemaining = timeRemainingReset;
+                print("hit");
+                other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 580);
+                
+            }
         }
-
-    }
+    }*/
 }
