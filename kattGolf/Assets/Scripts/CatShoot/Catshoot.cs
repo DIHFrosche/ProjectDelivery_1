@@ -103,10 +103,13 @@ public class Catshoot : MonoBehaviour {
             float simulationTime = i / (float)resolution * launchData.timeToTarget;
             Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * gravity * simulationTime * simulationTime / 2f;
             Vector3 drawPoint = cat.position + displacement;
-            lines[i].GetComponent<LineRenderer>().SetPosition(0, previousDrawPoint);
-            lines[i].GetComponent<LineRenderer>().SetPosition(1, drawPoint);
+            if(lines[i] != null) {
+                lines[i].GetComponent<LineRenderer>().SetPosition(0, previousDrawPoint);
+                lines[i].GetComponent<LineRenderer>().SetPosition(1, drawPoint);
+                previousDrawPoint = drawPoint;
+
+            }
             //Debug.DrawLine(previousDrawPoint, drawPoint, Color.green);
-            previousDrawPoint = drawPoint;
         }
     }
 
