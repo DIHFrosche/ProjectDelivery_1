@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Catshoot : MonoBehaviour {
 
+    AudioSource audioSource;
+
     public float maxForce = 5;
     public float minForce = 1;
     float heightPress;
@@ -27,6 +29,8 @@ public class Catshoot : MonoBehaviour {
     [SerializeField]GameObject linePrefab;
 
     GameObject[] lines = new GameObject[30];
+
+    public AudioClip[] hurtSounds; 
 
     private void Start() {
         currentHeight = 3;
@@ -72,6 +76,9 @@ public class Catshoot : MonoBehaviour {
                 StartCoroutine(slamBat());
                 GetComponent<CatBat>().club.SetActive(false);
                 GetComponent<SelectCat>().cat = null;
+                audioSource = cat.GetComponent<AudioSource>();
+                audioSource.clip = hurtSounds[Random.Range(0, hurtSounds.Length)];
+                audioSource.Play();
             }
             if (debugPath == true) {
                 DrawPath();
@@ -107,7 +114,7 @@ public class Catshoot : MonoBehaviour {
 
         int resolution = 30;
         for (int i = 0; i <= resolution; i++) {
-            if(lines[i] != null) {
+            if(i < 30) {
                 float simulationTime = i / (float)resolution * launchData.timeToTarget;
                 Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * gravity * simulationTime * simulationTime / 2f;
                 Vector3 drawPoint = cat.position + displacement;
