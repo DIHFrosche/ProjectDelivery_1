@@ -9,7 +9,7 @@ public class CatPointUI : MonoBehaviour {
 
     public Transform UITransform;
 
-    public Transform targetTransform;
+    public Transform playerUI;
 
     // Use this for initialization
     void Start() {
@@ -18,9 +18,9 @@ public class CatPointUI : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        Vector3 directionBetweenUIAndPlayer = targetTransform.position - UITransform.position;
+        Vector3 directionBetweenUIAndPlayer = playerUI.position - UITransform.position;
         if (Camera.main != null) {
-            if (Vector3.Dot(directionBetweenUIAndPlayer, targetTransform.transform.forward) < 0) {
+            if (Vector3.Dot(directionBetweenUIAndPlayer, playerUI.transform.forward) < 0) {
                 trans.position = Camera.main.WorldToScreenPoint(UITransform.position);
             }
 

@@ -34,9 +34,6 @@ public class Catshoot : MonoBehaviour {
     }
 
     void Update () {
-
-
-        print(FindObjectOfType<SelectCat>().cat);
         if(FindObjectOfType<SelectCat>().cat != null) {
             cat = FindObjectOfType<SelectCat>().cat.GetComponent<Rigidbody>();
             Vector3 targetPos = Vector3.Scale(target.transform.position, new Vector3(1, 0, 1));
@@ -82,6 +79,7 @@ public class Catshoot : MonoBehaviour {
         Physics.gravity = Vector3.up * gravity;
         cat.useGravity = true;
         cat.velocity = CalculateLaunchData().initialVelocity;
+        cat.angularVelocity = new Vector3(100, 0, 0);
     }
 
     LaunchData CalculateLaunchData() {
