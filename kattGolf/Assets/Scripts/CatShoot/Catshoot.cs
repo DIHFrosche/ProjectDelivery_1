@@ -30,9 +30,10 @@ public class Catshoot : MonoBehaviour {
 
     GameObject[] lines = new GameObject[30];
 
-    public AudioClip[] hurtSounds; 
-
+    public AudioClip[] hurtSounds;
+    AudioSource batSound;
     private void Start() {
+        batSound = GetComponent<AudioSource>();
         currentHeight = 3;
         for (int i = 0; i < lines.Length; i++) {
             lines[i] = Instantiate(linePrefab);
@@ -72,6 +73,7 @@ public class Catshoot : MonoBehaviour {
                 }
             }
             if (Input.GetKey(KeyCode.Mouse0)) {
+                batSound.Play();
                 Launch();
                 StartCoroutine(slamBat());
                 GetComponent<CatBat>().club.SetActive(false);
