@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Catshoot : MonoBehaviour {
+public class Catshoot : MonoBehaviour
+{
 
     AudioSource audioSource;
 
@@ -23,56 +24,67 @@ public class Catshoot : MonoBehaviour {
     float currentHeight;
     float targetMoveSpeed = 0.9f;
 
-    [SerializeField] GameObject catBatPivot;
+    [SerializeField] public GameObject catBatPivot;
     float currentPivotRotation;
 
-    [SerializeField]GameObject linePrefab;
+    [SerializeField] GameObject linePrefab;
 
     GameObject[] lines = new GameObject[30];
 
     public AudioClip[] hurtSounds;
     AudioSource batSound;
-    private void Start() {
+    private void Start()
+    {
         batSound = GetComponent<AudioSource>();
         currentHeight = 3;
-        for (int i = 0; i < lines.Length; i++) {
+        for (int i = 0; i < lines.Length; i++)
+        {
             lines[i] = Instantiate(linePrefab);
         }
     }
 
-    void Update () {
-        if(FindObjectOfType<SelectCat>().cat != null) {
+    void Update()
+    {
+        if (FindObjectOfType<SelectCat>().cat != null)
+        {
             cat = FindObjectOfType<SelectCat>().cat.GetComponent<Rigidbody>();
             Vector3 targetPos = Vector3.Scale(target.transform.position, new Vector3(1, 0, 1));
             Vector3 catPos = Vector3.Scale(cat.transform.position, new Vector3(1, 0, 1));
             directionBetweenCatAndTarget = (targetPos - catPos).normalized;
             Debug.DrawRay(cat.transform.position, directionBetweenCatAndTarget * 1000, Color.red);
-            if (Input.GetKey(KeyCode.RightArrow)){
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
                 currentHeight += 1;
                 currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
             }
-            if (Input.GetKey(KeyCode.LeftArrow)) {
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
                 currentHeight -= 1;
                 currentHeight = Mathf.Clamp(currentHeight, minHeight, maxHeight);
             }
 
-            if (Input.GetKey(KeyCode.UpArrow)) {
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
                 currentPivotRotation--;
                 currentPivotRotation = Mathf.Clamp(currentPivotRotation, -90, 0);
                 catBatPivot.transform.eulerAngles = new Vector3(0, 0, currentPivotRotation);
-                if(Vector3.Distance(target.position, cat.transform.position) <= maxForce) {
+                if (Vector3.Distance(target.position, cat.transform.position) <= maxForce)
+                {
                     target.position += directionBetweenCatAndTarget * targetMoveSpeed;
                 }
             }
-            if (Input.GetKey(KeyCode.DownArrow)) {
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
                 currentPivotRotation++;
                 currentPivotRotation = Mathf.Clamp(currentPivotRotation, -90, 0);
                 catBatPivot.transform.eulerAngles = new Vector3(0, 0, currentPivotRotation);
-                if(Vector3.Distance(target.position, cat.transform.position) >= minForce) {
+                if (Vector3.Distance(target.position, cat.transform.position) >= minForce)
+                {
                     target.position -= directionBetweenCatAndTarget * targetMoveSpeed;
                 }
             }
-            if (Input.GetKey(KeyCode.Mouse0)) {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
                 batSound.Play();
                 Launch();
                 StartCoroutine(slamBat());
@@ -82,23 +94,27 @@ public class Catshoot : MonoBehaviour {
                 audioSource.clip = hurtSounds[Random.Range(0, hurtSounds.Length)];
                 audioSource.Play();
             }
-            if (debugPath == true) {
+            if (debugPath == true)
+            {
                 DrawPath();
             }
         }
     }
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.cyan;
         Gizmos.DrawSphere(target.position, 1f);
     }
-    void Launch() {
+    void Launch()
+    {
         Physics.gravity = Vector3.up * gravity;
         cat.useGravity = true;
         cat.velocity = CalculateLaunchData().initialVelocity;
         cat.angularVelocity = new Vector3(100, 0, 0);
     }
 
-    LaunchData CalculateLaunchData() {
+    LaunchData CalculateLaunchData()
+    {
         float displacementY = target.position.y - cat.position.y;
         Vector3 displacementXZ = new Vector3(target.position.x - cat.position.x, 0, target.position.z - cat.position.z);
 
@@ -110,13 +126,16 @@ public class Catshoot : MonoBehaviour {
         return new LaunchData(velocityXZ + velocityY * -Mathf.Sign(gravity), time);
     }
 
-    void DrawPath() {
+    void DrawPath()
+    {
         LaunchData launchData = CalculateLaunchData();
         Vector3 previousDrawPoint = cat.position;
 
         int resolution = 30;
-        for (int i = 0; i <= resolution; i++) {
-            if(i < 30) {
+        for (int i = 0; i <= resolution; i++)
+        {
+            if (i < 30)
+            {
                 float simulationTime = i / (float)resolution * launchData.timeToTarget;
                 Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * gravity * simulationTime * simulationTime / 2f;
                 Vector3 drawPoint = cat.position + displacement;
@@ -129,25 +148,31 @@ public class Catshoot : MonoBehaviour {
         }
     }
 
-    struct LaunchData {
+    struct LaunchData
+    {
         public readonly Vector3 initialVelocity;
         public readonly float timeToTarget;
 
-        public LaunchData(Vector3 initialVelocity, float timeToTarget) {
+        public LaunchData(Vector3 initialVelocity, float timeToTarget)
+        {
             this.initialVelocity = initialVelocity;
             this.timeToTarget = timeToTarget;
         }
 
     }
 
-    IEnumerator slamBat() {
+    IEnumerator slamBat()
+    {
         int divider = 1;
-        float amountOfShift =  currentPivotRotation/divider;
-        for (int i = 0; i < 1; i++) {
-            currentPivotRotation -= amountOfShift-10;
+        float amountOfShift = currentPivotRotation / divider;
+        for (int i = 0; i < 1; i++)
+        {
+            currentPivotRotation -= amountOfShift - 10;
             catBatPivot.transform.eulerAngles = new Vector3(0, 0, currentPivotRotation);
             yield return null;
         }
 
     }
 }
+    
+

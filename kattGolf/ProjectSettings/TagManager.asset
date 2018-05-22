@@ -8,6 +8,12 @@ TagManager:
   - meny
   - Coin
   - Window
+  - Car
+  - wall
+  - Club
+  - BazookaClub
+  - WALL-EClub
+  - CatClub
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,10 @@ public class CatBat : MonoBehaviour {
 
     public GameObject club;
     GameObject cat;
+    public Mesh Bazooka;
+    public Mesh Catclub;
+    public Mesh WALLE;
+
 
     Vector3 currentPointHit;
 	
@@ -32,5 +36,23 @@ public class CatBat : MonoBehaviour {
             cat = null;
             
         }
+    }
+    public void BazookaClub()
+    {
+        GetComponent<Catshoot>().catBatPivot.GetComponentInChildren<MeshFilter>().mesh = Bazooka;
+        GetComponent<Catshoot>().maxForce = 20;
+        GetComponent<Catshoot>().maxHeight = 12;
+    }
+    public void CatClub()
+    {
+        GetComponent<Catshoot>().catBatPivot.GetComponentInChildren<MeshFilter>().mesh = Catclub;
+        GetComponent<Catshoot>().maxForce = 40;
+        GetComponent<Catshoot>().maxHeight = 24;
+    }
+    public void WALLEClub()
+    {
+        GetComponent<Catshoot>().catBatPivot.GetComponentInChildren<MeshFilter>().mesh = WALLE;
+        GetComponent<Catshoot>().maxForce = 30;
+        GetComponent<Catshoot>().maxHeight = 18;
     }
 }

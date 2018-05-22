@@ -23,6 +23,7 @@ public class Money : MonoBehaviour
         if (Input.GetKey(KeyCode.M))
         {
             money += 100;
+            print(money);
         }
     }
 
