@@ -17,7 +17,7 @@ public class GameMaser : MonoBehaviour {
         GetCats();
     }
 
-    void UpdateCAts() {
+    public void UpdateCAts() {
         deliveredCats++;
         deliveredCatsText.text = deliveredCats.ToString();
         if(deliveredCats == allCats) {
