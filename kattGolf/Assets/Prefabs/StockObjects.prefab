@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 114898500077364938}
   m_Layer: 2
   m_Name: FPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -904,7 +904,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063170361657988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.12, y: 3.8300002, z: 0.49}
+  m_LocalPosition: {x: -33.451, y: 139, z: -18.10868}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756046718645644}
@@ -1161,7 +1161,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469755939491380}
-  m_Mesh: {fileID: 4300000, guid: 03157dff0cbd1e54da99094d31501b2c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c779ee2d3faa4494e8db16d824855d41, type: 3}
 --- !u!33 &33793384093354782
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2256,9 +2256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   club: {fileID: 1977217182021714}
-  Bazooka: {fileID: 0}
-  Catclub: {fileID: 0}
-  WALLE: {fileID: 0}
+  Bazooka: {fileID: 4300000, guid: 2f31dfb1660915d4a9f0fb96ebcaf800, type: 3}
+  Catclub: {fileID: 4300000, guid: 1323910796c4c3744bc14dc2e57e0336, type: 3}
+  WALLE: {fileID: 4300000, guid: 751b4e73081e0454c9df206b0e880057, type: 3}
 --- !u!114 &114908536529410134
 MonoBehaviour:
   m_ObjectHideFlags: 1
