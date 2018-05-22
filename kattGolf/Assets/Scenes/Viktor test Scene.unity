@@ -907,11 +907,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114274738374552502, guid: b44ca93e53c38064bb1eeeb3b934db74,
-        type: 2}
-      propertyPath: points.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4513426858599300, guid: b44ca93e53c38064bb1eeeb3b934db74, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.3
@@ -944,10 +939,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1709510698492898, guid: b44ca93e53c38064bb1eeeb3b934db74, type: 2}
-      propertyPath: m_Name
-      value: Red Car (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 114274738374552502, guid: b44ca93e53c38064bb1eeeb3b934db74,
         type: 2}
       propertyPath: points.Array.data[0]
@@ -968,6 +959,45 @@ Prefab:
       propertyPath: points.Array.data[3]
       value: 
       objectReference: {fileID: 259660309}
+    - target: {fileID: 1709510698492898, guid: b44ca93e53c38064bb1eeeb3b934db74, type: 2}
+      propertyPath: m_Name
+      value: Red Car (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 65292847019963034, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4.7917023
+      objectReference: {fileID: 0}
+    - target: {fileID: 65292847019963034, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 4.877329e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65292847019963034, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0.9058352
+      objectReference: {fileID: 0}
+    - target: {fileID: 65292847019963034, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_Center.z
+      value: -0.19524288
+      objectReference: {fileID: 0}
+    - target: {fileID: 195512675051027518, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_BaseOffset
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 195512675051027518, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_Height
+      value: 5.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 65292847019963034, guid: b44ca93e53c38064bb1eeeb3b934db74,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 8.955515
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44ca93e53c38064bb1eeeb3b934db74, type: 2}
   m_IsPrefabParent: 0
