@@ -31,8 +31,7 @@ public class gamemeny : MonoBehaviour {
         pausemenuUI.SetActive(false);
         Time.timeScale = 1f;
         Gameispaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        ShowCursor.SetCursorLock(true);
 
 
     }
@@ -41,8 +40,8 @@ public class gamemeny : MonoBehaviour {
         pausemenuUI.SetActive(true);
         Time.timeScale = 0f;
         Gameispaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ShowCursor.SetCursorLock(false);
+
 
     }
     public void Continue()

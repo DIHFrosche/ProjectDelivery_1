@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cat
   - meny
+  - Coin
   layers:
   - Default
   - TransparentFX

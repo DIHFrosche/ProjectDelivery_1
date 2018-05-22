@@ -21,23 +21,21 @@ public class ShopScript : MonoBehaviour
     private void OnTriggerEnter(Collider Collision)
     {
         print("shop");
-        if (Collision.tag == "meny")
+        if (Collision.tag == "Player")
         {
             ShopCanvas.SetActive(true);
             gamemnu.SetActive(false);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            ShowCursor.SetCursorLock(false);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         print("leave");
-        if (other.tag == "meny")
+        if (other.tag == "Player")
         {
             ShopCanvas.SetActive(false);
             gamemnu.SetActive(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            ShowCursor.SetCursorLock(true);
         }
     }
 
