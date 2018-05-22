@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 4126908376366532}
   - component: {fileID: 33379739841450088}
   - component: {fileID: 23459923842855112}
-  - component: {fileID: 65675285330867190}
   m_Layer: 0
   m_Name: viktor2
   m_TagString: Car
@@ -210,18 +209,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.3024025, y: 4.7917023, z: 8.955515}
   m_Center: {x: 4.877329e-10, y: 0.9058352, z: -0.19524288}
---- !u!65 &65675285330867190
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1799720442823448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.087042, y: 2.9800537, z: 8.302403}
-  m_Center: {x: 0.00000023841855, y: 0, z: 0}
 --- !u!114 &114274738374552502
 MonoBehaviour:
   m_ObjectHideFlags: 1

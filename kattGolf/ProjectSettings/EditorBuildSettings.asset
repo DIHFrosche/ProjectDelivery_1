@@ -5,19 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
-    guid: b41d6b3be99c0cd46bf2c1357c850f8e
-  - enabled: 0
-    path: Assets/Scenes/PickLevel.unity
-    guid: e6c6886fc061d8f41bf56e7993516e16
-  - enabled: 0
-    path: Assets/Scenes/Demobana.unity
-    guid: 7f537bc78604c944aa50331dca541889
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Walk.unity
-    guid: 3f97d18e37941704c9dc8d981a366830
+    path: Assets/Scenes/poopoo peepee.unity
+    guid: f1b8c09210676184f969eb792b392801
+  - enabled: 1
+    path: Assets/Scenes/MainLevelScene.unity
+    guid: 36d5682465c8a6149bfc1667a890ebc5
   m_configObjects: {}

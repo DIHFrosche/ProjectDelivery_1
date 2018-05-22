@@ -18,7 +18,7 @@ public class gamemeny : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetKeyUp(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(Gameispaused == false)
             {
@@ -44,11 +44,6 @@ public class gamemeny : MonoBehaviour {
 
 
     }
-    public void Continue()
-    {
-        pausemenuUI.SetActive(false);
-        Time.timeScale = 1f;
-    }
 
     public void mainmenu()
     {
@@ -57,5 +52,9 @@ public class gamemeny : MonoBehaviour {
     public void restart()
     {
         SceneManager.LoadScene(4);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
