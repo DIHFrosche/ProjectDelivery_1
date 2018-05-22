@@ -56,6 +56,7 @@ public class PayMoney : MonoBehaviour
             Button2.SetActive(false);
             Button3.SetActive(true);
             Money.money -= payment2;
+            GameObject.FindWithTag("Player").GetComponent<CatBat>().BazookaClub();
         }
     }
     public void Pay3()
@@ -67,6 +68,7 @@ public class PayMoney : MonoBehaviour
             Button3.SetActive(false);
             Button4.SetActive(true);
             Money.money -= payment3;
+            GameObject.FindWithTag("Player").GetComponent<CatBat>().WALLEClub();
         }
     }
     public void Pay4()
@@ -77,6 +79,7 @@ public class PayMoney : MonoBehaviour
             Image4.SetActive(false);
             Button4.SetActive(false);
             Money.money -= payment4;
+            GameObject.FindWithTag("Player").GetComponent<CatBat>().CatClub();
         }
     }
 }
