@@ -15,7 +15,6 @@ public class CatBat : MonoBehaviour {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit)) {
             currentPointHit = hit.point;
         }
-
         if (GetComponent<SelectCat>().hasCatBeenSelected == true) {
             club.SetActive(true);
             cat = GetComponent<SelectCat>().cat;

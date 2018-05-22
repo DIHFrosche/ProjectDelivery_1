@@ -11,10 +11,12 @@ public class NavMeshTest : MonoBehaviour
     private int destPoint = 0;
     private UnityEngine.AI.NavMeshAgent agent;
     float timeLeft;
+    Collider thisColider;
 
 
     void Start()
     {
+        thisColider = GetComponent<Collider>();
         Time.timeScale = 2;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
@@ -53,6 +55,16 @@ public class NavMeshTest : MonoBehaviour
             /*Instantiate(objectToSpawn, spawnPoint, true);
             Destroy(this.gameObject);*/
 
+        }
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "wall")
+        {
+           
+                Physics.IgnoreCollision(collision.collider, thisColider);
+            
         }
 
     }
