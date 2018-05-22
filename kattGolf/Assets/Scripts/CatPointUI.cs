@@ -18,6 +18,9 @@ public class CatPointUI : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if(UITransform == null) {
+            Destroy(gameObject);
+        }
         Vector3 directionBetweenUIAndPlayer = playerUI.position - UITransform.position;
         if (Camera.main != null) {
             if (Vector3.Dot(directionBetweenUIAndPlayer, playerUI.transform.forward) < 0) {
