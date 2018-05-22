@@ -1098,17 +1098,17 @@ Prefab:
     - target: {fileID: 224053494935891510, guid: 32c1ce283eca847469662fa3f0595a77,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 100
+      value: 115.4
       objectReference: {fileID: 0}
     - target: {fileID: 224053494935891510, guid: 32c1ce283eca847469662fa3f0595a77,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 730
       objectReference: {fileID: 0}
     - target: {fileID: 224053494935891510, guid: 32c1ce283eca847469662fa3f0595a77,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 473.7
       objectReference: {fileID: 0}
     - target: {fileID: 224053494935891510, guid: 32c1ce283eca847469662fa3f0595a77,
         type: 2}
@@ -1169,6 +1169,21 @@ Prefab:
         type: 2}
       propertyPath: m_textInfo.wordCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116362169992690, guid: 32c1ce283eca847469662fa3f0595a77,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116362169992690, guid: 32c1ce283eca847469662fa3f0595a77,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116362169992690, guid: 32c1ce283eca847469662fa3f0595a77,
+        type: 2}
+      propertyPath: m_textAlignment
+      value: 258
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32c1ce283eca847469662fa3f0595a77, type: 2}
@@ -1238,17 +1253,17 @@ Prefab:
     - target: {fileID: 224720234130270456, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 224720234130270456, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 88.1
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 224720234130270456, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 57
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 224720234130270456, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
         type: 2}
@@ -1283,7 +1298,7 @@ Prefab:
     - target: {fileID: 114842195732782338, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114842195732782338, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
         type: 2}
@@ -1358,6 +1373,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842195732782338, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842195732782338, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60767e4a3c3d1fe48be0d4e70b8a02fc, type: 2}
