@@ -25,13 +25,5 @@ public class Money : MonoBehaviour
             money += 100;
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (GetComponent<Collider>().tag == "Coin")
-        {
-            money += 300;
-            Destroy(other);
-        }
-    }
 
 }
