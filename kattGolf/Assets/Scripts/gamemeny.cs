@@ -20,10 +20,12 @@ public class gamemeny : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(Gameispaused == false)
+            if (Gameispaused == false)
             {
                 Pause();
             }
+            else
+                Resume();
         }
     }
     public void Resume()
